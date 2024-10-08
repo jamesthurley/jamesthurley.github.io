@@ -1,0 +1,10 @@
+{% set items = items | split(pat=",") %}
+
+<div class="image-row carousel-{{nth}}">
+  {% for item in items %}
+  {% set item = item | split(pat="|") %}
+  <a href="{{item[0]}}" alt="{{item[1]}}">
+    <img src="{{item[0]}}" alt="{{item[1]}}" {% if height %}style="height: {{height}}" {% endif %}>
+  </a>
+  {% endfor %}
+</div>

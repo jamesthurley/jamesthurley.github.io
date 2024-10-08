@@ -1,0 +1,18 @@
+{% set items = items | split(pat=",") %}
+
+<div class="carousel carousel-{{nth}}" tabindex="0">
+  <ul class="list">
+    {% for item in items %}
+    {% set item = item | split(pat="|") %}
+    <li class="item">
+      <div class="content">
+        <figure><img {% if width %}width="{{width}}"{% endif %} src="{{item[0]}}" alt="{{item[1]}}" />
+          <figcaption>{{item[1]}}</figcaption>
+        </figure>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  <button onclick="handleClick('carousel-{{nth}}', 'previous')" class="button--previous" type="button">➜</button>
+  <button onclick="handleClick('carousel-{{nth}}', 'next')" class="button--next" type="button">➜</button>
+</div>

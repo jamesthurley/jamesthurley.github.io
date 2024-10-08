@@ -1,0 +1,44 @@
+figcaption {
+  color: #292929;
+  /* Change text color */
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  figcaption {
+    color: #d1d1d1;
+    /* Change text color */
+  }
+}
+
+.icon {
+  vertical-align: sub;
+  padding-right: .25rem;
+  display: inline-block;
+  width: 1em;
+  height: 1.3em;
+  margin-right: 0.2rem;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.post-list li {
+  margin-bottom: 1rem;
+}
+
+.post-list .date {
+  margin-left: 0.5rem;
+}
+
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.image-row img {
+  width: auto;   /* Keeps aspect ratio */
+  flex-shrink: 0;
+}
