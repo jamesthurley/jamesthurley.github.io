@@ -84,8 +84,8 @@ body > * {
 
 /* Make the header bg full width, but the content inline with body */
 body > header {
-  background-color: var(--accent-bg);
-  border-bottom: 1px solid var(--border);
+  /* background-color: var(--accent-bg); */
+  /* border-bottom: 1px solid var(--accent-bg); */
   text-align: center;
   padding: 0 0.5rem 2rem 0.5rem;
   grid-column: 1 / -1;
@@ -98,6 +98,7 @@ body > header > *:only-child {
 body > header h1 {
   max-width: 1200px;
   margin: 1rem auto;
+  font-size: 2rem;
 }
 
 body > header p {
@@ -305,6 +306,14 @@ header > nav a[aria-current="true"] {
     text-decoration: underline;
     line-height: 1;
   }
+}
+
+header > a,
+header > a:visited {
+    /* remove all anchor styling */
+    color: var(--text);
+    text-decoration: none;
+    /* remove anchor underline */
 }
 
 /* Consolidate box styling */
