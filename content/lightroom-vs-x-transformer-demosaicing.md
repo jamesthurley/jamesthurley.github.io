@@ -19,7 +19,7 @@ I’m using the evaluation version of X-Transformer (version 1.1.1) for these te
 
 ### Source Photos
 
-{{ image_row( height="200px", items="man-small.jpg|Man,room-small.jpg|Room,car-small.jpg|Car,wall-small.jpg|Wall") }}
+{{ image_row( height=200, items="man-small.jpg|Man,room-small.jpg|Room,car-small.jpg|Car,wall-small.jpg|Wall") }}
 
 # Configuring Iridient X-Transformer
 
@@ -87,7 +87,7 @@ The brighter the pixel the greater the difference compared to Lightroom's defaul
 
 Many of the images below are auto-playing slideshows, which is useful for seeing the differences at a glance. However I recommend manually clicking between the images to give yourself time to fully appreciate the differences.  Looking at them on a large screen also helps.
 
-{{ carousel(width="500px", items="man-enhance-details-diff.png|Enhance Details,man-more-detailed-diff.png|X-Transformer More Detailed,man-smoother-diff.png|X-Transformer Smoother") }}
+{{ carousel(width=500, items="man-enhance-details-diff.png|Enhance Details,man-more-detailed-diff.png|X-Transformer More Detailed,man-smoother-diff.png|X-Transformer Smoother") }}
 
 The most obvious thing to note here is that there isn't a huge amount of difference between Enhance Details and the two X-Transformer DNGs in terms of the magnitude and location of the changes they are making. His beard, tie, jacket and the pattern on his shirt seem to have been affected most, which makes sense as they have the most fine grained detail. There are other subtle differences, for example Enhance Details seems to have had more of an effect in the dark area in the top left compared to the other two, but it isn't visually obvious in the final image. We'll take a closer look at these areas soon.
 
@@ -127,7 +127,7 @@ I think more tests would need to be done here. It is possible that in other circ
 
 The diff images for the final two photos are as you would expect, with most changes occurring where there are fine details. I'll only show the "Enhance Details" versions below due to the lens correction differences making the X-Transformer ones less useful.
 
-{{ image_row( height="400px", items="car-enhance-details-diff.png|Car Enhance Details,wall-enhance-details-diff.png|Wall Enhance Details") }}
+{{ image_row( height=400, items="car-enhance-details-diff.png|Car Enhance Details,wall-enhance-details-diff.png|Wall Enhance Details") }}
 
 Let's look at the actual differences now. Below are 100% crops of some of the interesting areas. I suggest pausing the animation and stepping through the images manually to really appreciate the differences. I'm going to refer to the the original image as RAF,  the Lightroom "Enhanced Details" image as ED,  the X-Transformer "More Details" image as XD,  and the X-Transformer "Smoother" image as XS for brevity.
 

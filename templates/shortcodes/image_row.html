@@ -1,10 +1,15 @@
 {% set items = items | split(pat=",") %}
 
-<div class="image-row carousel-{{nth}}">
+<div class="image-row" id="image-row-{{nth}}">
   {% for item in items %}
   {% set item = item | split(pat="|") %}
-  <a href="{{item[0]}}" alt="{{item[1]}}">
-    <img src="{{item[0]}}" alt="{{item[1]}}" {% if height %}style="height: {{height}}" {% endif %}>
+  {% set path = page.path ~ item[0] %}
+  {% set alt = item[1] %}
+
+  {% set resized_image = resize_image(path=path, height=height * 2, op="fit_height") %}
+
+  <a href="{{path}}" alt="{{alt}}">
+    <img src="{{resized_image.url}}" alt="{{alt}}" style="height: {{height}}px">
   </a>
   {% endfor %}
 </div>

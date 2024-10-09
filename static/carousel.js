@@ -1,6 +1,6 @@
-function handleClick(className, direction) {
+function handleClick(carouselId, direction) {
 
-  let selector = "." + className;
+  let selector = "#" + carouselId;
   let carousel = document.querySelector(selector);
 
   handleClickInner(carousel, direction);
