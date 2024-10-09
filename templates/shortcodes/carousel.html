@@ -4,18 +4,17 @@
   <ul class="list">
     {% for item in items %}
     {% set item = item | split(pat="|") %}
-    {% set path = page.path ~ item[0] %}
+    {% set path = item[0] %}
     {% set alt = item[1] %}
     {% set target_width = 960 %}
     {% if width %}
       {% set target_width = width %}
     {% endif %}
-    {% set resized_image = resize_image(path=path, width=target_width * 2, op="fit_width") %}
     <li class="item">
       <div class="content">
         <figure>
-          <a href="{{ get_url(path=path) }}">
-            <img width="{{target_width}}px" src="{{resized_image.url}}" alt="{{alt}}" />
+          <a href="{{path}}">
+            <img width="{{target_width}}px" src="{{path}}" alt="{{alt}}" />
           </a>
           <figcaption>{{alt}}</figcaption>
         </figure>
