@@ -85,7 +85,7 @@ I used a program called [Beyond Compare](https://www.scootersoftware.com/) to do
 
 The brighter the pixel the greater the difference compared to Lightroom's default rendering. Note that the X-Transformer files have a watermark present as I am using the evaluation version of the software.
 
-Many of the images below are auto-playing slideshows, which is useful for seeing the differences at a glance. However I recommend manually clicking between the images to give yourself time to fully appreciate the differences.  Looking at them on a large screen also helps.
+Many of the images below are slideshows, which you will need to click through to see the differences being discussed. Looking at them on a large screen also helps.
 
 {{ carousel(width=500, items="man-enhance-details-diff.png|Enhance Details,man-more-detailed-diff.png|X-Transformer More Detailed,man-smoother-diff.png|X-Transformer Smoother") }}
 
