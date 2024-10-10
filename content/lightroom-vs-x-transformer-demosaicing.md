@@ -1,13 +1,14 @@
 +++
 title = "Lightroom vs X-Transformer Demosaicing"
-date = 2019-02-01
+date = 2019-02-21
 aliases = ["Lightroom-vs-X-Transformer-Demosaicing"]
+description = "A look at how Adobe Lightroom handles demosaicing of Fuji's X-Trans RAW files compared to using Irident X-Transformer or Lightroom Enhance Details."
 +++
 
 <link rel="stylesheet" href="/carousel.css">
 <script src="/carousel.js"></script>
 
-I’ve recently been considering getting a smaller camera system, which naturally led me to look at Fujifilm’s smaller bodies like the recently announced X-T30. That in turn led me to the controversy surrounding Lightroom’s demosaicing of Fuji’s X-Trans RAW files.
+I’ve been considering getting a smaller camera system, which naturally led me to look at Fujifilm’s smaller bodies like the recently announced X-T30. That in turn led me to the controversy surrounding Lightroom’s demosaicing of Fuji’s X-Trans RAW files.
 
 The short version of this controversy is that some people aren’t happy, calling Lightroom’s demosaicing of X-Trans files waxy or like an oil painting, and citing artefacts such as “worms” or "bacteria". Adobe, on the other hand, said that many people are perfectly happy with their rendering, while acknowledging that things aren’t perfect.
 

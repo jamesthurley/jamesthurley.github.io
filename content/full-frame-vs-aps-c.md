@@ -1,18 +1,19 @@
 +++
 title = "Full Frame vs APS-C"
-date = 2019-01-01
+date = 2019-01-14
 aliases = ["Full-Frame-vs-APS-C"]
+description = "Choosing full frame or APS-C camera sensors from the perspective of image quality and lens size."
 +++
 
-When choosing a new camera body, traditionally I look for something which will allow me to take the best quality photos in the greatest range of conditions. That has repeatedly lead me to choose full frame (FF). The combination of large sensors, extensive lens ecosystems and excellent body performance puts them in the sweet spot between APS-C and medium format.
+When choosing a new camera I typically look at bodies with full frame (FF) sensors. I see them as being a good balance of size and performance compared to APS-C and medium format.
 
-However, recently I’ve been placing more value on having a camera which can be with me more often, which means size and weight have become more important. I’ve considered small full frame options like the Leica Q, but ideally I still want interchangeable lenses. So I’ve been thinking about moving to APS-C.
+However I’ve recently been placing more value on having a camera which can be with me more often, which means size and weight have become more important. I’ve considered small full frame options like the Leica Q, but ideally I still want interchangeable lenses. I've considered the Leica rangefinders, and have owned them in the past, but currently in my life I value autofocus. So I’ve been thinking about moving to APS-C.
 
-While considering this I realised that I didn’t fully understand the compromises I’d be making. The more I thought about what I thought I knew, the less it seemed to make sense. So I did some research and stumbled across an excellent essay on equivalence by Joseph James:
+While considering this I realised that I didn’t fully understand the compromises I’d be making. The more I considered what I thought I knew, the less it seemed to make sense. So I did some research and stumbled across an excellent essay on equivalence by Joseph James:
 
 [http://www.josephjamesphotography.com/equivalence/](http://www.josephjamesphotography.com/equivalence/)
 
-The essay really is excellent, and extremely thorough, but it is also quite long and intimidating. I wanted to write an abridged version for my own benefit, focusing on the questions I needed answered. This is that document.
+The essay is great, and extremely thorough, but it is also quite long and intimidating. I wanted to write an abridged version for my own benefit, focusing on the questions I needed answered.
 
 # The Questions
 - Does Full Frame have lower noise than APS-C?

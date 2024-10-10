@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>
-    Posts
-</h1>
-<ul class="post-list">
+<ul class="post-list" style="margin-top: 30px">
   {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a><em class="date">{{page.date}}</em></li>
+  {% set dateFormat = "%B %Y" %}
+  {% set date = page.date | date(format=dateFormat) %}
+  <li>
+    <article>
+        <div class="date">{{date}}</div>
+        <header>{{ page.title }}</header>
+        <div class="article-description">{{ page.description }}</div>
+        <a href="{{ page.permalink | safe }}" aria-label="Post: {{ page.title }}, on {{date}}">Read More</a>
+    </article>
+    </li>
   {% endfor %}
 </ul>
 {% endblock content %}

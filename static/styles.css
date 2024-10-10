@@ -23,14 +23,6 @@ figcaption {
   fill: currentColor;
 }
 
-.post-list li {
-  margin-bottom: 1rem;
-}
-
-.post-list .date {
-  margin-left: 0.5rem;
-}
-
 .image-row {
   display: flex;
   flex-wrap: wrap;
@@ -41,4 +33,43 @@ figcaption {
 .image-row img {
   width: auto;   /* Keeps aspect ratio */
   flex-shrink: 0;
+}
+
+.post-list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+.post-list article {
+  display: block;
+  position: relative;
+  background: var(--accent-bg);
+  border: 0px solid var(--border);
+  border-radius: var(--standard-border-radius);
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.post-list header {
+  font-size: 1.6em;
+  color: var(--accent);
+}
+
+.post-list .article-description {
+  font-style: italic;
+  padding-top: 0.5rem;
+}
+
+.post-list a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-indent: -99999px;
+}
+
+.post-list .date {
+  display: block;
+  font-size: 0.9em;
 }

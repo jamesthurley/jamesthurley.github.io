@@ -13,9 +13,7 @@
     <li class="item">
       <div class="content">
         <figure>
-          <a href="{{path}}">
-            <img width="{{target_width}}px" src="{{path}}" alt="{{alt}}" />
-          </a>
+          <img width="{{target_width}}px" src="{{path}}" alt="{{alt}}" onclick="handleClick('carousel-{{nth}}', 'next')"/>
           <figcaption>{{alt}}</figcaption>
         </figure>
       </div>
