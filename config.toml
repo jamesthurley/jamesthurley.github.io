@@ -9,6 +9,7 @@ build_search_index = false
 
 generate_feeds = true
 
+title = "thurley.com"
 author = "James Thurley"
 
 [markdown]
