@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="/simple.css">
   <link rel="stylesheet" href="/styles.css">
   <script defer src="https://cloud.umami.is/script.js" data-website-id="06cf5b64-fc8b-488b-b9db-9f54b74e3753"></script>
+  {% block rss %}
+  <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+  {% endblock %}
 </head>
 
 <body>
@@ -30,6 +33,7 @@
   <footer>
     <a href="/">Home</a>
     <a href="https://github.com/jamesthurley">GitHub</a>
+    <a href="/atom.xml">RSS Feed</a>
   </footer>
 </body>
 
