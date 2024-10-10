@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>thurley.com</title>
+    <link rel="self" type="application/atom+xml" href="https://thurley.com/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://thurley.com"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2019-02-21T00:00:00+00:00</updated>
+    <id>https://thurley.com/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Lightroom vs X-Transformer Demosaicing</title>
+        <published>2019-02-21T00:00:00+00:00</published>
+        <updated>2019-02-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              James Thurley
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://thurley.com/lightroom-vs-x-transformer-demosaicing/"/>
+        <id>https://thurley.com/lightroom-vs-x-transformer-demosaicing/</id>
+        
+        <content type="html" xml:base="https://thurley.com/lightroom-vs-x-transformer-demosaicing/">&lt;link rel=&quot;stylesheet&quot; href=&quot;&#x2F;carousel.css&quot;&gt;
+&lt;script src=&quot;&#x2F;carousel.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;p&gt;I’ve been considering getting a smaller camera system, which naturally led me to look at Fujifilm’s smaller bodies like the recently announced X-T30. That in turn led me to the controversy surrounding Lightroom’s demosaicing of Fuji’s X-Trans RAW files.&lt;&#x2F;p&gt;
+&lt;p&gt;The short version of this controversy is that some people aren’t happy, calling Lightroom’s demosaicing of X-Trans files waxy or like an oil painting, and citing artefacts such as “worms” or &quot;bacteria&quot;. Adobe, on the other hand, said that many people are perfectly happy with their rendering, while acknowledging that things aren’t perfect.&lt;&#x2F;p&gt;
+&lt;p&gt;Starting from a position of scepticism that Lightroom could be as bad as people say with X-Trans, I decided to investigate for myself. As I don&#x27;t yet own a Fuji camera, I used a selection of &lt;a href=&quot;https:&#x2F;&#x2F;www.photographyblog.com&#x2F;previews&#x2F;fujifilm_x_t3_photos&quot;&gt;publicly available RAW files&lt;&#x2F;a&gt; from the Fuji X-T3, trying to chose a set with enough variety to expose any demosaicing issues.&lt;&#x2F;p&gt;
+&lt;p&gt;The most common workaround for the problem is using a program called &lt;a href=&quot;https:&#x2F;&#x2F;www.iridientdigital.com&#x2F;products&#x2F;xtransformer.html&quot;&gt;Iridient X-Transformer&lt;&#x2F;a&gt;, which converts the Fuji RAF file into a DNG file with the sensor data already demosaiced using Iridient&#x27;s own algorithm. Adobe also recently released a feature for Lightroom called “Enhance Details”, which people say could potentially replace X-Transformer in their workflow. You run Enhance Details on a RAF file after importing it into Lightroom and, like X-Transformer, it also generates a DNG file containing demosaiced sensor data. I’ll compare both of these options to the Lightroom default rendering.&lt;&#x2F;p&gt;
+&lt;p&gt;I’m using the evaluation version of X-Transformer (version 1.1.1) for these tests, which watermarks the image.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;source-photos&quot;&gt;Source Photos&lt;&#x2F;h3&gt;
+
+
+&lt;div class=&quot;image-row&quot; id=&quot;image-row-1&quot;&gt;
+  
+  
+  
+  
+
+  
+
+  &lt;a href=&quot;&amp;#x2F;lightroom-vs-x-transformer-demosaicing&amp;#x2F;man-small.jpg&quot; alt=&quot;Man&quot;&gt;
+    &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;thurley.com&amp;#x2F;processed_images&amp;#x2F;man-small.9963fafd7f9618fa.jpg&quot; alt=&quot;Man&quot; style=&quot;height: 200px&quot;&gt;
+  &lt;&#x2F;a&gt;
+  
+  
+  
+  
+
+  
+
+  &lt;a href=&quot;&amp;#x2F;lightroom-vs-x-transformer-demosaicing&amp;#x2F;room-small.jpg&quot; alt=&quot;Room&quot;&gt;
+    &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;thurley.com&amp;#x2F;processed_images&amp;#x2F;room-small.bfc6a64aeb9a25b4.jpg&quot; alt=&quot;Room&quot; style=&quot;height: 200px&quot;&gt;
+  &lt;&#x2F;a&gt;
+  
+  
+  
+  
+
+  
+
+  &lt;a href=&quot;&amp;#x2F;lightroom-vs-x-transformer-demosaicing&amp;#x2F;car-small.jpg&quot; alt=&quot;Car&quot;&gt;
+    &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;thurley.com&amp;#x2F;processed_images&amp;#x2F;car-small.acf5944052bab56c.jpg&quot; alt=&quot;Car&quot; style=&quot;height: 200px&quot;&gt;
+  &lt;&#x2F;a&gt;
+  
+  
+  
+  
+
+  
+
+  &lt;a href=&quot;&amp;#x2F;lightroom-vs-x-transformer-demosaicing&amp;#x2F;wall-small.jpg&quot; alt=&quot;Wall&quot;&gt;
+    &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;thurley.com&amp;#x2F;processed_images&amp;#x2F;wall-small.f5cb1178003684a0.jpg&quot; alt=&quot;Wall&quot; style=&quot;height: 200px&quot;&gt;
+  &lt;&#x2F;a&gt;
+  
+&lt;&#x2F;div&gt;
+&lt;h1 id=&quot;configuring-iridient-x-transformer&quot;&gt;Configuring Iridient X-Transformer&lt;&#x2F;h1&gt;
+&lt;p&gt;X-Transformer is quite configurable, but “RAW Process” is the only option I&#x27;m actually interested in, as that is the only option which affects demosaicing. My aim is simply to produce a DNG that is as close to the original RAF as possible, but with the demosaicing already done. The other options either bake in additional changes to the demosaiced output, or override Lightroom’s default handling of the RAW file, neither of which is desirable. I’ll go over these options in more detail below.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;thurley.com&#x2F;lightroom-vs-x-transformer-demosaicing&#x2F;x-transformer-configuration-1.png&quot; alt=&quot;x-transformer-configuration-1&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;raw-process-option&quot;&gt;Raw Process Option&lt;&#x2F;h3&gt;
+&lt;p&gt;This is the only option which affects the demosaicing algorithm. There are two options here: Smoother or More Detailed. I’ll test them both.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;sharpening-noise-reduction-options&quot;&gt;Sharpening &#x2F; Noise Reduction Options&lt;&#x2F;h3&gt;
+&lt;p&gt;These settings are to do with applying Iridient’s own sharpening or noise reduction algorithms to the demosaiced output. Using these options “bakes in” the results to the RAW file, meaning they can’t be later reduced or adjusted in Lightroom, although you could still apply Lightroom’s own sharpening or noise reduction on top.&lt;&#x2F;p&gt;
+&lt;p&gt;As we have no particular issues with Lightroom’s sharpening or noise reduction algorithms, only its demosaicing, I’m leaving them set to “None” to keep the DNG as raw as possible.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;dng-baseline-tag-options&quot;&gt;DNG Baseline Tag Options&lt;&#x2F;h3&gt;
+&lt;p&gt;There is one baseline tag option for sharpness, and one for noise. These options are quite interesting. The DNG spec says the following about the sharpness tag:&lt;&#x2F;p&gt;
+&lt;p&gt;&quot;BaselineSharpness specifies the relative amount of sharpening required for this camera model, compared to a reference camera model. Camera models vary in the strengths of their anti-aliasing filters. Cameras with weak or no filters require less sharpening than cameras with strong anti-aliasing filters.”&lt;&#x2F;p&gt;
+&lt;p&gt;The X-T3 has no anti-aliasing filter, implying we might want this set to “Low” or “Very Low”, however I would suggest setting it to “Do Not Include” and I’ll explain why.&lt;&#x2F;p&gt;
+&lt;p&gt;When you open a RAW file in Lightroom it applies some default sharpening and noise reduction, but the precise amount depends on the camera. I haven’t found out how Lightroom decides on these values, but I assume it is part of its internal profile for each camera. Let’s assume that the defaults are a sensible starting point for a given camera.&lt;&#x2F;p&gt;
+&lt;p&gt;As a quick example, when I open a RAF file from an X-T3 it sets the sharpening slider to 40 by default, where as with a DNG from my Leica SL it is 25 by default. The maximum value is 150.&lt;&#x2F;p&gt;
+&lt;p&gt;But, crucially, what “40” means is affected by the BaselineSharpness tag. Setting the baseline sharpness lower means that “40” has less effect compared to setting it higher. You can verify this though experimentation. With baseline sharpness set to low I had to increase the sharpening slider to 60 to get the same amount of sharpening as 40 had when the baseline sharpness was set to “Adobe Standard”.&lt;&#x2F;p&gt;
+&lt;p&gt;This means that adjusting this tag will change how much effect Lightroom&#x27;s default level of sharpening has on the image. If we are trying to change the Lightroom demosaicing behaviour and nothing else then we don’t want to change the default baseline sharpness.&lt;&#x2F;p&gt;
+&lt;p&gt;Setting the tag to “Do Not Include” seems to allow Lightroom to fall back on its default behaviour for the camera. I did some tests and for the X-T3 the default behaviour appears to be the same as the “Low” setting, but there is no point in us specifying this explicitly.&lt;&#x2F;p&gt;
+&lt;p&gt;Therefore I would recommend setting the tags for both sharpness and noise reduction to “Do Not Include” to avoid overriding the default behaviour.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;turn-off-lightroom-sharpening-nr-options&quot;&gt;Turn off Lightroom Sharpening&#x2F;NR Options&lt;&#x2F;h3&gt;
+&lt;p&gt;The same argument applies to these settings. Checking this box forces Lightroom to apply zero sharpening and noise reduction by default, rather than what it thinks is best for the camera. As we only want to change the demosaicing behaviour we will leave this unchecked.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;lens-corrections&quot;&gt;Lens Corrections&lt;&#x2F;h3&gt;
+&lt;p&gt;Choosing “Include as DNG Metadata” will pass through any lens correction data from the original RAF and allow Lightroom to apply the lens corrections itself. The other two options either discard them, or bake the corrections into the demosaiced output in the DNG. We don’t have any problems with Lightroom’s lens correction algorithms, so setting this to “Include as DNG Metadata” keeps the DNG as raw as possible.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;dng-options&quot;&gt;DNG Options&lt;&#x2F;h3&gt;
+&lt;p&gt;The settings in the DNG Options tab are fine at their defaults, although I’ve tweaked them to my liking. I like to include a full size JPEG preview, for example, as I often want to check the focus before Lightroom has had a chance to generate it’s own preview.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;thurley.com&#x2F;lightroom-vs-x-transformer-demosaicing&#x2F;x-transformer-configuration-2.png&quot; alt=&quot;x-transformer-configuration-2&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;comparing-lightroom-and-x-transformer&quot;&gt;Comparing Lightroom and X-Transformer&lt;&#x2F;h1&gt;
+&lt;p&gt;After configuring X-Transformer, I generated three DNG files for each source RAF file:&lt;&#x2F;p&gt;
+&lt;p&gt;- Lightroom Enhance Details&lt;&#x2F;p&gt;
+&lt;p&gt;- X-Transformer More Detailed&lt;&#x2F;p&gt;
+&lt;p&gt;- X-Transformer Smoother&lt;&#x2F;p&gt;
+&lt;p&gt;I used a program called &lt;a href=&quot;https:&#x2F;&#x2F;www.scootersoftware.com&#x2F;&quot;&gt;Beyond Compare&lt;&#x2F;a&gt; to do a diff between each of the three DNG files and the default Lightroom rendering.  The resulting diff images for the photo of the man is shown below.&lt;&#x2F;p&gt;
+&lt;p&gt;The brighter the pixel the greater the difference compared to Lightroom&#x27;s default rendering. Note that the X-Transformer files have a watermark present as I am using the evaluation version of the software.&lt;&#x2F;p&gt;
+&lt;p&gt;Many of the images below are slideshows, which you will need to click through to see the differences being discussed. Looking at them on a large screen also helps.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;carousel&quot; tabindex=&quot;0&quot; id=&quot;carousel-1&quot;&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    
+    
+    
+    
+    
+    
+      
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;500px&quot; src=&quot;man-enhance-details-diff.png&quot; alt=&quot;Enhance Details&quot; onclick=&quot;handleClick(&#x27;carousel-1&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Enhance Details&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+      
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;500px&quot; src=&quot;man-more-detailed-diff.png&quot; alt=&quot;X-Transformer More Detailed&quot; onclick=&quot;handleClick(&#x27;carousel-1&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer More Detailed&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+      
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;500px&quot; src=&quot;man-smoother-diff.png&quot; alt=&quot;X-Transformer Smoother&quot; onclick=&quot;handleClick(&#x27;carousel-1&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer Smoother&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+  &lt;&#x2F;ul&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-1&#x27;, &#x27;previous&#x27;)&quot; class=&quot;button--previous&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-1&#x27;, &#x27;next&#x27;)&quot; class=&quot;button--next&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The most obvious thing to note here is that there isn&#x27;t a huge amount of difference between Enhance Details and the two X-Transformer DNGs in terms of the magnitude and location of the changes they are making. His beard, tie, jacket and the pattern on his shirt seem to have been affected most, which makes sense as they have the most fine grained detail. There are other subtle differences, for example Enhance Details seems to have had more of an effect in the dark area in the top left compared to the other two, but it isn&#x27;t visually obvious in the final image. We&#x27;ll take a closer look at these areas soon.&lt;&#x2F;p&gt;
+&lt;p&gt;When I created the same difference images for the room photo, I realised a problem: The lens corrections are being applied slightly differently for the DNG files which came from X-Transformer. This is why, in the X-Transformer images below, the differences appear to be greater as you move away from the centre. In reality this is caused by a slightly different distortion from the lens corrections, not the demosaicing algorithm. I had similar problems with the photos of the car and the wall. The image of the man above didn&#x27;t seem to be effected beyond needing to shift the X-Transformer files right and up two pixels to align them. &lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;carousel&quot; tabindex=&quot;0&quot; id=&quot;carousel-2&quot;&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-enhance-details-diff.png&quot; alt=&quot;Enhance Details&quot; onclick=&quot;handleClick(&#x27;carousel-2&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Enhance Details&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-more-detailed-diff.png&quot; alt=&quot;X-Transformer More Detailed&quot; onclick=&quot;handleClick(&#x27;carousel-2&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer More Detailed&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-smoother-diff.png&quot; alt=&quot;X-Transformer Smoother&quot; onclick=&quot;handleClick(&#x27;carousel-2&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer Smoother&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+  &lt;&#x2F;ul&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-2&#x27;, &#x27;previous&#x27;)&quot; class=&quot;button--previous&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-2&#x27;, &#x27;next&#x27;)&quot; class=&quot;button--next&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;&lt;h1 id=&quot;interlude-lens-correction-differences&quot;&gt;Interlude: Lens Correction Differences&lt;&#x2F;h1&gt;
+&lt;p&gt;To investigate the lens corrections further, I exported from X-Transformer with the three different lens correction options: &quot;Include as DNG Metadata&quot;, &quot;Apply Corrections to Image&quot; and &quot;Ignore&quot;. You can see the results below, along with what you get importing the RAF file directly into Lightroom.  &lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;carousel&quot; tabindex=&quot;0&quot; id=&quot;carousel-3&quot;&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-ignore-corrections.jpg&quot; alt=&quot;Uncorrected&quot; onclick=&quot;handleClick(&#x27;carousel-3&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Uncorrected&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-raff-corrections.jpg&quot; alt=&quot;Lightroom RAF Corrections&quot; onclick=&quot;handleClick(&#x27;carousel-3&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Lightroom RAF Corrections&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-x-transformer-corrections.jpg&quot; alt=&quot;X-Transformer RAF Corrections&quot; onclick=&quot;handleClick(&#x27;carousel-3&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer RAF Corrections&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-dng-corrections.jpg&quot; alt=&quot;X-Transformer DNG Correction Metadata&quot; onclick=&quot;handleClick(&#x27;carousel-3&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer DNG Correction Metadata&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+  &lt;&#x2F;ul&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-3&#x27;, &#x27;previous&#x27;)&quot; class=&quot;button--previous&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-3&#x27;, &#x27;next&#x27;)&quot; class=&quot;button--next&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;There are some interesting points here:&lt;&#x2F;p&gt;
+&lt;p&gt;My expectation was that passing the corrections though as DNG metadata would produce the same result in Lightroom as applying the corrections from the original RAF file, but this is not the case.&lt;&#x2F;p&gt;
+&lt;p&gt;Instead, passing the corrections though as DNG metadata results in the same final image as having X-Transformer apply the corrections directly to the image during conversion.&lt;&#x2F;p&gt;
+&lt;p&gt;You can see that when the corrections are passed through as DNG that the X-Transformer watermark is shifted slightly compared to when X-Transformer applies the corrections itself. This confirms that the corrections are indeed being done in Lightroom. Look closely at the watermark in the top left while moving between the images to see this.&lt;&#x2F;p&gt;
+&lt;p&gt;Perhaps when passing the corrections through as DNG metadata X-Transformer must first interpret the lens correction data in the RAF file and translate it into the correct format for DNG. If this translation involves using its own lens correction algorithms in some way then that would explain why Lightroom&#x27;s corrections end up matching X-Transformer&#x27;s algorithms.&lt;&#x2F;p&gt;
+&lt;p&gt;The X-Transformer corrections and the Lightroom corrections from the original RAF are quite close when compared to the uncorrected image. Probably close enough not to matter. Having said that, looking closer at some of the straight lines in the image is quite interesting:&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;carousel&quot; tabindex=&quot;0&quot; id=&quot;carousel-4&quot;&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-ignore-corrections-edges.jpg&quot; alt=&quot;Uncorrected&quot; onclick=&quot;handleClick(&#x27;carousel-4&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Uncorrected&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-raff-corrections-edges.jpg&quot; alt=&quot;Lightroom RAF Corrections&quot; onclick=&quot;handleClick(&#x27;carousel-4&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Lightroom RAF Corrections&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-dng-corrections-edges.jpg&quot; alt=&quot;X-Transformer DNG Correction Metadata&quot; onclick=&quot;handleClick(&#x27;carousel-4&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer DNG Correction Metadata&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+  &lt;&#x2F;ul&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-4&#x27;, &#x27;previous&#x27;)&quot; class=&quot;button--previous&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-4&#x27;, &#x27;next&#x27;)&quot; class=&quot;button--next&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;In the corrected image rendered form the original RAF file the edge of the alcove on the left isn&#x27;t quite straight; it moves slightly away from the red (straight) reference line at the top and bottom. However in the corrected image using the DNG metadata it looks to be completely straight. The horizontal line at the top is more subtle, but to my eye the same thing is happening if you look closely at the left hand side. &lt;&#x2F;p&gt;
+&lt;p&gt;In this image the edge correction after generating a DNG though X-Transformer actually looks marginally better than the edge correction applied by Lightroom directly from the original RAF file.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember, this is even with Lightroom applying the lens corrections itself from the X-Transformer DNG metadata. &lt;&#x2F;p&gt;
+&lt;p&gt;I think more tests would need to be done here. It is possible that in other circumstances the situation could reverse, and the Lightroom corrections from the RAF might sometimes perform better than the X-Transformer corrections passed though in DNG metadata, but on the basis of this image I would not be overly concerned that the lens corrections coming out of X-Transformer are slightly different than expected.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;back-to-demosaicing&quot;&gt;Back to Demosaicing&lt;&#x2F;h1&gt;
+&lt;p&gt;The diff images for the final two photos are as you would expect, with most changes occurring where there are fine details. I&#x27;ll only show the &quot;Enhance Details&quot; versions below due to the lens correction differences making the X-Transformer ones less useful.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;image-row&quot; id=&quot;image-row-2&quot;&gt;
+  
+  
+  
+  
+
+  
+
+  &lt;a href=&quot;&amp;#x2F;lightroom-vs-x-transformer-demosaicing&amp;#x2F;car-enhance-details-diff.png&quot; alt=&quot;Car Enhance Details&quot;&gt;
+    &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;thurley.com&amp;#x2F;processed_images&amp;#x2F;car-enhance-details-diff.b9f1969ca8088d34.png&quot; alt=&quot;Car Enhance Details&quot; style=&quot;height: 400px&quot;&gt;
+  &lt;&#x2F;a&gt;
+  
+  
+  
+  
+
+  
+
+  &lt;a href=&quot;&amp;#x2F;lightroom-vs-x-transformer-demosaicing&amp;#x2F;wall-enhance-details-diff.png&quot; alt=&quot;Wall Enhance Details&quot;&gt;
+    &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;thurley.com&amp;#x2F;processed_images&amp;#x2F;wall-enhance-details-diff.d8c04acb2014fe7f.png&quot; alt=&quot;Wall Enhance Details&quot; style=&quot;height: 400px&quot;&gt;
+  &lt;&#x2F;a&gt;
+  
+&lt;&#x2F;div&gt;
+&lt;p&gt;Let&#x27;s look at the actual differences now. Below are 100% crops of some of the interesting areas. I suggest pausing the animation and stepping through the images manually to really appreciate the differences. I&#x27;m going to refer to the the original image as RAF,  the Lightroom &quot;Enhanced Details&quot; image as ED,  the X-Transformer &quot;More Details&quot; image as XD,  and the X-Transformer &quot;Smoother&quot; image as XS for brevity.&lt;&#x2F;p&gt;
+&lt;p&gt;Notice how the colour of his white stubble is more flesh coloured in the RAF image, and whiter in the others. Notice how the detail in the hairs increases for ED and XD. Notice the red highlights on around the hairs on the far left of the image, which are perhaps better controlled in the RAF. Notice how XS appears to be the softest rendering, even softer than the RAF.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;carousel&quot; tabindex=&quot;0&quot; id=&quot;carousel-5&quot;&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;man-crop-mouth.jpg&quot; alt=&quot;RAF&quot; onclick=&quot;handleClick(&#x27;carousel-5&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;RAF&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;man-crop-mouth-enhance-details.jpg&quot; alt=&quot;Enhance Details&quot; onclick=&quot;handleClick(&#x27;carousel-5&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Enhance Details&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;man-crop-mouth-more-detailed.jpg&quot; alt=&quot;X-Transformer More Detailed&quot; onclick=&quot;handleClick(&#x27;carousel-5&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer More Detailed&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;man-crop-mouth-smoother.jpg&quot; alt=&quot;X-Transformer Smoother&quot; onclick=&quot;handleClick(&#x27;carousel-5&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer Smoother&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+  &lt;&#x2F;ul&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-5&#x27;, &#x27;previous&#x27;)&quot; class=&quot;button--previous&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-5&#x27;, &#x27;next&#x27;)&quot; class=&quot;button--next&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Notice how the detail and colour in his tie change considerably between the images. Notice how the blue threading in his jacket becomes more obvious in the non-RAF images. Notice how the dark blue threaded stripes in his shirt become better defined in the non-RAF images. Notice how XS is again the softest.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;carousel&quot; tabindex=&quot;0&quot; id=&quot;carousel-6&quot;&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;man-crop-tie.jpg&quot; alt=&quot;RAF&quot; onclick=&quot;handleClick(&#x27;carousel-6&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;RAF&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;man-crop-tie-enhance-details.jpg&quot; alt=&quot;Enhance Details&quot; onclick=&quot;handleClick(&#x27;carousel-6&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Enhance Details&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;man-crop-tie-more-detailed.jpg&quot; alt=&quot;X-Transformer More Detailed&quot; onclick=&quot;handleClick(&#x27;carousel-6&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer More Detailed&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;man-crop-tie-smoother.jpg&quot; alt=&quot;X-Transformer Smoother&quot; onclick=&quot;handleClick(&#x27;carousel-6&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer Smoother&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+  &lt;&#x2F;ul&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-6&#x27;, &#x27;previous&#x27;)&quot; class=&quot;button--previous&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-6&#x27;, &#x27;next&#x27;)&quot; class=&quot;button--next&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Notice the &quot;oil painting&quot; look in the leaves through the window in the RAF image, particularly in through the right hand window. This is fixed in the non-RAF images. Notice how the curves of the iron window furniture become slightly smoother in the non-RAF images. Notice the small trees in front of the wall in the bottom left are less saturated in the RAF image compared to the others.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;carousel&quot; tabindex=&quot;0&quot; id=&quot;carousel-7&quot;&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-crop-window.jpg&quot; alt=&quot;RAF&quot; onclick=&quot;handleClick(&#x27;carousel-7&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;RAF&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-crop-window-enhance-details.jpg&quot; alt=&quot;Enhance Details&quot; onclick=&quot;handleClick(&#x27;carousel-7&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Enhance Details&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-crop-window-more-detailed.jpg&quot; alt=&quot;X-Transformer More Detailed&quot; onclick=&quot;handleClick(&#x27;carousel-7&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer More Detailed&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-crop-window-smoother.jpg&quot; alt=&quot;X-Transformer Smoother&quot; onclick=&quot;handleClick(&#x27;carousel-7&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer Smoother&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+  &lt;&#x2F;ul&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-7&#x27;, &#x27;previous&#x27;)&quot; class=&quot;button--previous&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-7&#x27;, &#x27;next&#x27;)&quot; class=&quot;button--next&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Notice how the &quot;FUJIFILM&quot; and &quot;September&quot; text on the menus are better defined in the non-RAF images, and are crisper in the ED and XD images. Notice how the noise in the menu, particularly at the top, becomes more random and less &quot;bacterial&quot; in the non-RAF images. Notice the highlight in the spoon on the left is better controlled in the RAF image.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;carousel&quot; tabindex=&quot;0&quot; id=&quot;carousel-8&quot;&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-crop-menu.jpg&quot; alt=&quot;RAF&quot; onclick=&quot;handleClick(&#x27;carousel-8&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;RAF&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-crop-menu-enhance-details.jpg&quot; alt=&quot;Enhance Details&quot; onclick=&quot;handleClick(&#x27;carousel-8&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Enhance Details&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-crop-menu-more-detailed.jpg&quot; alt=&quot;X-Transformer More Detailed&quot; onclick=&quot;handleClick(&#x27;carousel-8&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer More Detailed&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;room-crop-menu-smoother.jpg&quot; alt=&quot;X-Transformer Smoother&quot; onclick=&quot;handleClick(&#x27;carousel-8&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer Smoother&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+  &lt;&#x2F;ul&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-8&#x27;, &#x27;previous&#x27;)&quot; class=&quot;button--previous&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-8&#x27;, &#x27;next&#x27;)&quot; class=&quot;button--next&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Notice how the red becomes more intense in the inner part of the Jaguar logo in the non-RAF images. Notice how XS is again the softest. Notice how the house and tree in the reflection perhaps seems slightly better defined in the original RAF image.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;carousel&quot; tabindex=&quot;0&quot; id=&quot;carousel-9&quot;&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;car-crop.jpg&quot; alt=&quot;RAF&quot; onclick=&quot;handleClick(&#x27;carousel-9&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;RAF&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;car-crop-enhance-details.jpg&quot; alt=&quot;Enhance Details&quot; onclick=&quot;handleClick(&#x27;carousel-9&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Enhance Details&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;car-crop-more-detailed.jpg&quot; alt=&quot;X-Transformer More Detailed&quot; onclick=&quot;handleClick(&#x27;carousel-9&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer More Detailed&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;car-crop-smoother.jpg&quot; alt=&quot;X-Transformer Smoother&quot; onclick=&quot;handleClick(&#x27;carousel-9&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer Smoother&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+  &lt;&#x2F;ul&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-9&#x27;, &#x27;previous&#x27;)&quot; class=&quot;button--previous&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-9&#x27;, &#x27;next&#x27;)&quot; class=&quot;button--next&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Notice how the subtle blue patches in the brickwork on the left become more saturated in the non-RAF images. I&#x27;m unsure if the more saturated blue is more accurate or not. Notice the rust on the shaft becomes slightly more saturated in the non-RAF images.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;carousel&quot; tabindex=&quot;0&quot; id=&quot;carousel-10&quot;&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;wall-crop-shaft.jpg&quot; alt=&quot;RAF&quot; onclick=&quot;handleClick(&#x27;carousel-10&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;RAF&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;wall-crop-shaft-enhance-details.jpg&quot; alt=&quot;Enhance Details&quot; onclick=&quot;handleClick(&#x27;carousel-10&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Enhance Details&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;wall-crop-shaft-more-detailed.jpg&quot; alt=&quot;X-Transformer More Detailed&quot; onclick=&quot;handleClick(&#x27;carousel-10&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer More Detailed&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;wall-crop-shaft-smoother.jpg&quot; alt=&quot;X-Transformer Smoother&quot; onclick=&quot;handleClick(&#x27;carousel-10&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer Smoother&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+  &lt;&#x2F;ul&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-10&#x27;, &#x27;previous&#x27;)&quot; class=&quot;button--previous&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-10&#x27;, &#x27;next&#x27;)&quot; class=&quot;button--next&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Perhaps it&#x27;s because the photo isn&#x27;t very sharp, but in this part of the image there is surprisingly little difference between the different images other than the XS image being noticeably softer. The ED and XD versions do render the knot in the centre slightly with slightly more clarity however.&lt;&#x2F;p&gt;
+
+
+&lt;div class=&quot;carousel&quot; tabindex=&quot;0&quot; id=&quot;carousel-11&quot;&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;wall-crop-hoop.jpg&quot; alt=&quot;RAF&quot; onclick=&quot;handleClick(&#x27;carousel-11&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;RAF&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;wall-crop-hoop-enhance-details.jpg&quot; alt=&quot;Enhance Details&quot; onclick=&quot;handleClick(&#x27;carousel-11&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;Enhance Details&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;wall-crop-hoop-more-detailed.jpg&quot; alt=&quot;X-Transformer More Detailed&quot; onclick=&quot;handleClick(&#x27;carousel-11&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer More Detailed&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+    
+    
+    
+    
+    
+    &lt;li class=&quot;item&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;figure&gt;
+          &lt;img width=&quot;960px&quot; src=&quot;wall-crop-hoop-smoother.jpg&quot; alt=&quot;X-Transformer Smoother&quot; onclick=&quot;handleClick(&#x27;carousel-11&#x27;, &#x27;next&#x27;)&quot;&#x2F;&gt;
+          &lt;figcaption&gt;X-Transformer Smoother&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;li&gt;
+    
+  &lt;&#x2F;ul&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-11&#x27;, &#x27;previous&#x27;)&quot; class=&quot;button--previous&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+  &lt;button onclick=&quot;handleClick(&#x27;carousel-11&#x27;, &#x27;next&#x27;)&quot; class=&quot;button--next&quot; type=&quot;button&quot;&gt;➜&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h1&gt;
+&lt;p&gt;The Lightroom Enhanced Details images and the X-Transformer More Detailed images are both an overall improvement over the default RAF rendering. Details are rendered sharper, and the bacterial noise and oil painting effects are eliminated.&lt;&#x2F;p&gt;
+&lt;p&gt;I thought the default RAF rendering did hold up quite well, and even seemed to control some of the point highlights better than the other options. I can understand why it is just fine for many people, and yet at the same time it clearly does have some problems.&lt;&#x2F;p&gt;
+&lt;p&gt;The X-Transformer Smoother rendering seems to be softer than all of the others. I had expected it to still out-perform the RAF, but it didn&#x27;t. However it does get rid of the bacterial noise and oil paining effects, which is a big plus. On the basis of these images I&#x27;m not sure I would ever choose Smoother over More Detailed rendering in X-Transformer.&lt;&#x2F;p&gt;
+&lt;p&gt;The fact that the lens correction metadata isn&#x27;t passed through intact from X-Transformer to Lightroom does concern me slightly. However, the lens corrections applied from the DNG metadata did appear to be an improvement on the default Lightroom corrections in the photo I looked at in detail, which somewhat negates this concern.&lt;&#x2F;p&gt;
+&lt;p&gt;I think it is difficult to choose between Lightroom Enhance Details and X-Transformer More Detailed on image quality alone.  My personal feeling from looking at these examples is that X-Transformer More Detailed probably beats Lightroom Enhance Details more often than not, which is all the more impressive given its fast performance. It is over 3 times faster on my computer than Lightroom Enhance Details (about 10 seconds vs 35 seconds), although my GPU isn&#x27;t great.&lt;&#x2F;p&gt;
+&lt;p&gt;Lightroom Enhance Details does allow you to keep your workflow entirely within Lightroom, and it is free (if you already own Lightroom). &lt;&#x2F;p&gt;
+&lt;p&gt;X-Transformer it isn&#x27;t particularly expensive at $30, it is faster to run, and the resulting DNGs are also significantly smaller. For the photo of the man, the RAF was about 57MB, the X-Transformer More Detailed DNG was about 72MB and the Lightroom Enhance Details DNG was about 125MB. If you&#x27;re simply batch converting all your RAFs to DNG as a one-off step before importing them into Lightroom then the software quickly gets out of your way, and you&#x27;re back into your normal Lightroom workflow.&lt;&#x2F;p&gt;
+&lt;p&gt;On balance then, I think my preference would be to use X-Transformer in More Detailed mode over the other options.&lt;&#x2F;p&gt;
+&lt;p&gt;The real shame is that Lightroom can&#x27;t just use a better demosaicing algorithm to begin with when importing an X-Trans RAF file. Enhance Details is a step in the right direction, but it should really be seamless.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Full Frame vs APS-C</title>
+        <published>2019-01-14T00:00:00+00:00</published>
+        <updated>2019-01-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              James Thurley
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://thurley.com/full-frame-vs-aps-c/"/>
+        <id>https://thurley.com/full-frame-vs-aps-c/</id>
+        
+        <content type="html" xml:base="https://thurley.com/full-frame-vs-aps-c/">&lt;p&gt;When choosing a new camera I typically look at bodies with full frame (FF) sensors. I see them as being a good balance of size and performance compared to APS-C and medium format.&lt;&#x2F;p&gt;
+&lt;p&gt;However I’ve recently been placing more value on having a camera which can be with me more often, which means size and weight have become more important. I’ve considered small full frame options like the Leica Q, but ideally I still want interchangeable lenses. I&#x27;ve considered the Leica rangefinders, and have owned them in the past, but currently in my life I value autofocus. So I’ve been thinking about moving to APS-C.&lt;&#x2F;p&gt;
+&lt;p&gt;While considering this I realised that I didn’t fully understand the compromises I’d be making. The more I considered what I thought I knew, the less it seemed to make sense. So I did some research and stumbled across an excellent essay on equivalence by Joseph James:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.josephjamesphotography.com&#x2F;equivalence&#x2F;&quot;&gt;http:&#x2F;&#x2F;www.josephjamesphotography.com&#x2F;equivalence&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The essay is great, and extremely thorough, but it is also quite long and intimidating. I wanted to write an abridged version for my own benefit, focusing on the questions I needed answered.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;the-questions&quot;&gt;The Questions&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Does Full Frame have lower noise than APS-C?&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Does Full Frame have a shallower depth of field than APS-C?&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Are APS-C lenses smaller than Full Frame lenses?&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Are APS-C lenses cheaper than Full Frame lenses?&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Are APS-C manufacturers being misleading in their lens descriptions?&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Do I really need Full Frame?&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;what-you-need-to-know&quot;&gt;What you need to know&lt;&#x2F;h1&gt;
+&lt;p&gt;The crop factor of an APS-C sensor is, generally speaking, about 1.5. That means a FF sensor is 1.5 times wider and 1.5 times taller than an APS-C sensor.&lt;&#x2F;p&gt;
+&lt;p&gt;When you take a photo with a 50mm f&#x2F;2 lens on a FF camera it has a certain field of view and a certain depth of field. For the sake of this example, let’s assume we’re at a shutter speed of 1&#x2F;100th of a second which is required for the photo we want to take. And let’s say we are at ISO 100.&lt;&#x2F;p&gt;
+&lt;p&gt;When the same lens is put on an APS-C camera, it is still a 50mm f&#x2F;2 lens and the depth of field remains identical. You will still get a correctly exposed image at 1&#x2F;100th of a second and ISO 100. However because the resulting image is cropped relative to the FF image, the field of view on the APS-C camera is narrower, and actually the equivalent of using a 75mm lens on a FF camera. You multiply the focal length by the sensor’s crop factor to work this out. 50mm x 1.5 = 75mm.&lt;&#x2F;p&gt;
+&lt;p&gt;However using a 50mm f&#x2F;2 lens on an APS-C camera is not the same as using a 75mm lens with an f&#x2F;2 aperture on a full frame camera. A 50mm f&#x2F;2 lens has a 25mm effective aperture diameter (50mm&#x2F;2), where as a 75mm f&#x2F;2 lens has a 37.5mm effective aperture diameter. The 75mm f&#x2F;2 lens therefore has a shallower depth of field than the 50mm f&#x2F;2 lens, and lets in more light.&lt;&#x2F;p&gt;
+&lt;p&gt;The FF “equivalent“ of a 50mm f&#x2F;2 lens lens is in fact a 75mm f&#x2F;3 lens, which you get by also multiplying the aperture by the crop factor. Aperture f&#x2F;2 x 1.5 = f&#x2F;3. Using a 50mm f&#x2F;2 lens on an APS-C camera will give you the same field of view, and the same depth of field as using a 75mm f&#x2F;3 lens on a FF camera.&lt;&#x2F;p&gt;
+&lt;p&gt;However, keeping our shutter speed and ISO fixed, the 75mm f&#x2F;3 lens will produce an underexposed image on the FF camera relative to the 50mm f&#x2F;2 lens on the APS-C camera. We will need to increase our ISO to ISO 225 on the full frame camera to compensate. We work this out by using the crop factor squared: ISO 100 x 1.5 x 1.5 = ISO 225.&lt;&#x2F;p&gt;
+&lt;p&gt;At this point we have our APS-C camera with a 50mm f&#x2F;2 lens at ISO 100, and our FF camera with a 75mm f&#x2F;3 lens at ISO 225. If we take a photo with each, the resulting photo will have the same field of view, the same depth of field, and the same final exposure. It would be difficult to tell which photo was taken with which camera in a blind test.&lt;&#x2F;p&gt;
+&lt;p&gt;But wait a minute, the FF camera is at a higher ISO than the APS-C camera. And higher ISO images usually have more noise and less dynamic range, right? So does the APS-C camera have an advantage here?&lt;&#x2F;p&gt;
+&lt;p&gt;In fact, if we’ve had to change the ISO to maintain exposure, is the 75mm f&#x2F;3 lens on FF really equivalent to the 50mm f&#x2F;2 lens on APS-C?&lt;&#x2F;p&gt;
+&lt;p&gt;Let’s dig a bit deeper.&lt;&#x2F;p&gt;
+&lt;p&gt;The key is that the same quantity of light is passing through both the 50mm f&#x2F;2 lens and the 75mm f&#x2F;3 lens and hitting each sensor. However:&lt;&#x2F;p&gt;
+&lt;p&gt;Exposure = Total Light &#x2F; Sensor Area&lt;&#x2F;p&gt;
+&lt;p&gt;The FF sensor has a larger area overall, so the same total light is spread out over that larger area. This produces a lower exposure, which in turn requires a higher ISO to amplify the signal and make the final picture correctly exposed.&lt;&#x2F;p&gt;
+&lt;p&gt;But, crucially, sensor noise is a factor of the sensor efficiency and the total light hitting the sensor, not the ISO. If the FF and APS-C sensors are of the same generation and technology then they will have approximately the same efficiency, and as we’ve already established the total quantity of light hitting each sensor is the same. &lt;em&gt;Therefore the amount of noise in the final image will also be the same.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;So in our example ISO 225 on the FF camera has the same noise as ISO 100 on the APS-C camera. The FF camera in fact has the advantage. ISO 100 on the FF camera will have lower noise than ISO 100 on the APS-C camera, because for the full frame camera’s output image to be correctly exposed at ISO 100 there must be more light falling on the sensor compared to the APS-C camera at ISO 100.&lt;&#x2F;p&gt;
+&lt;p&gt;This is still a simplification of the full picture, but for more information I suggest getting stuck into Joseph James’ article linked at the top. Thankfully, the above is sufficient to answer our questions.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;the-answers&quot;&gt;The Answers&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;does-full-frame-have-lower-noise-than-aps-c&quot;&gt;Does Full Frame have lower noise than APS-C?&lt;&#x2F;h2&gt;
+&lt;p&gt;We can now say that yes, generally speaking, for sensors of the same generation and with the same technology, the FF sensor will show lower noise for the same ISO setting compared to the APS-C sensor.&lt;&#x2F;p&gt;
+&lt;p&gt;Of course in reality a more recent APS-C camera could exhibit less noise than an older FF camera. And if the sensor technologies are different in the two cameras the results might also be different.&lt;&#x2F;p&gt;
+&lt;p&gt;But generally speaking, the answer is yes.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;does-full-frame-have-a-shallower-depth-of-field-than-aps-c&quot;&gt;Does Full Frame have a shallower depth of field than APS-C?&lt;&#x2F;h2&gt;
+&lt;p&gt;As we demonstrated above, not if you are using an equivalent lens. However, in reality there may not be an equivalent lens for the APS-C system.&lt;&#x2F;p&gt;
+&lt;p&gt;If you are using the Leica 75mm f&#x2F;1.25 Noctilux, you would need a 50mm f&#x2F;0.83 lens on your APS-C camera to take the equivalent photo. Good luck finding one of those.&lt;&#x2F;p&gt;
+&lt;p&gt;So full frame generally gives you the option of having a shallower depth of field than APS-C.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;are-aps-c-lenses-smaller-than-full-frame-lenses&quot;&gt;Are APS-C lenses smaller than Full Frame lenses?&lt;&#x2F;h2&gt;
+&lt;p&gt;Equivalent lenses on each system will, generally speaking, be about the same size because they both need the same effective aperture diameter.&lt;&#x2F;p&gt;
+&lt;p&gt;However APS-C lenses ranges will often appear smaller because they aren’t made to have aperture diameters as large as their FF counterparts. For example most manufacturers will have a range of f&#x2F;1.4 primes as their “fast” primes, but the f&#x2F;1.4 APS-C primes are really the equivalent of f&#x2F;2.1 primes on FF systems, and so have smaller effective aperture diameters, allowing them to be physically smaller.&lt;&#x2F;p&gt;
+&lt;p&gt;While this means in theory you can get equally small FF lenses by buying smaller aperture lenses, often the slower lenses on FF systems will be aimed at a more price-conscious market segment and may therefore have a lower image quality, while the faster primes will aimed at the professional market and consequently designed to a higher standard.&lt;&#x2F;p&gt;
+&lt;p&gt;Therefore if you want a lens which is both compact and of the highest quality, an APS-C system might actually be a better place to look. Alternatively look for a FF system that builds all their lenses to the highest standards, such as Leica.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;are-aps-c-lenses-cheaper-than-full-frame-lenses&quot;&gt;Are APS-C lenses cheaper than Full Frame lenses?&lt;&#x2F;h2&gt;
+&lt;p&gt;This answer is similar to the answer about lens size. In theory APS-C lenses would not be any cheaper than their FF equivalents, but in practice because APS-C lenses are often have a smaller effective aperture diameter than their FF counterparts they can be cheaper to design and build. For example an f&#x2F;1.4 APS-C prime has a smaller aperture diameter than the f&#x2F;1.4 FF prime, making it potentially less expensive.&lt;&#x2F;p&gt;
+&lt;p&gt;However APS-C lenses can also be more expensive than their FF equivalents, as lenses with short focal lengths and wide apertures can be more complicated to design and build and the FF equivalent with a longer focal length and smaller effective aperture diameter.&lt;&#x2F;p&gt;
+&lt;p&gt;And finally, the APS-C lens could be more expensive simply if it is designed to a higher standard than the FF equivalent from another manufacturer.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;are-aps-c-manufacturers-being-misleading-with-their-lens-descriptions&quot;&gt;Are APS-C manufacturers being misleading with their lens descriptions?&lt;&#x2F;h2&gt;
+&lt;p&gt;Some people say the APS-C lens manufacturers are being misleading by only quoting the FF equivalent focal length, but not aperture.&lt;&#x2F;p&gt;
+&lt;p&gt;I don’t personally think they are intending to mislead. To many customers the FF equivalent lens might simply be the focal length that will give them the same angle of view and the same final exposure for a given shutter speed and ISO. That is a perfectly reasonable definition, and keeping the FF equivalent f-stop the same would be correct for those customers’ expectations.&lt;&#x2F;p&gt;
+&lt;p&gt;I think the manufacturers have simply chosen to use the “simpler” definition of an equivalent lens.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;do-i-really-need-full-frame&quot;&gt;Do I really need Full Frame?&lt;&#x2F;h1&gt;
+&lt;p&gt;I’m obviously ignoring other sensor sizes like Medium Format or Micro Four Thirds here, but the same arguments could easily be applied for those.&lt;&#x2F;p&gt;
+&lt;p&gt;If size, weight and cost are a concern, then APS-C could be the better choice. But not because of the lenses. A small APS-C body like the Fujifilm X-E3 is 337g, where as a small FF body like the Sony A7III is 650g by comparison and also physically larger.&lt;&#x2F;p&gt;
+&lt;p&gt;Here are some specific examples with lenses using &lt;a href=&quot;https:&#x2F;&#x2F;camerasize.com&#x2F;compact&#x2F;&quot;&gt;camerasize.com&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;portrait-lens&quot;&gt;Portrait Lens&lt;&#x2F;h2&gt;
+&lt;p&gt;The Fujifilm 56mm f&#x2F;1.2 lens is 407g, and while the Sony equivalent 85mm f&#x2F;1.8 is lighter at 371g, the total combined weight including the body is 744g vs 1021g respectively, making the Sony setup both heavier and larger.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;thurley.com&#x2F;full-frame-vs-aps-c&#x2F;ff-aps-c-portrait.png&quot; alt=&quot;Full Frame vs APS-C Portrait Lenses&quot; title=&quot;Full Frame vs APS-C Portrait Lenses&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;travel-zoom&quot;&gt;Travel Zoom&lt;&#x2F;h2&gt;
+&lt;p&gt;The Fujifilm 18-55mm f&#x2F;2.8-4 travel lens is 310g, while the closest Sony equivalent 28-70mm f&#x2F;3.5-5.6 is again lighter at 295g. The combined weight still favours the Fuji at 647g vs 945g.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;thurley.com&#x2F;full-frame-vs-aps-c&#x2F;ff-aps-c-travel-zoom.png&quot; alt=&quot;Full Frame vs APS-C Travel Zoom Lenses&quot; title=&quot;Full Frame vs APS-C Travel Zoom Lenses&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;compact-general-purpose-prime&quot;&gt;Compact General Purpose Prime&lt;&#x2F;h2&gt;
+&lt;p&gt;The Fujifilm 27mm f&#x2F;2.8 pancake lens is 78g, while the closest Sony equivalent is the 35mm f&#x2F;2.8 at 120g. The combined weight is 415g and 770g respectively, favouring the Fuji setup. Note that the Sony has a larger maximum effective aperture diameter which gives it an inherent size disadvantage. However it&#x27;s worth mentioning that the Fujifilm with the pancake lens is small enough to &lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;iYbyXCVT-IY?t=46&quot;&gt;fit into a pocket&lt;&#x2F;a&gt; while having a very useful 40mm equivalent focal length.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;thurley.com&#x2F;full-frame-vs-aps-c&#x2F;ff-aps-c-compact-prime.png&quot; alt=&quot;Full Frame vs APS-C Compact Prime Lenses&quot; title=&quot;Full Frame vs APS-C Compact Prime Lenses&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;When you are looking at minimising size, weight or cost the Fuji APS-C setup appears to beat the Sony full frame setup, but the surprise is that the reason is usually due to the smaller, lighter and less expensive APS-C bodies rather than the lenses.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h1&gt;
+&lt;p&gt;Full frame gives you the &lt;em&gt;option&lt;&#x2F;em&gt; of having larger effective aperture diameters, allowing more total light to reach the sensor, which in turn results in less noise and a shallower depth of field.&lt;&#x2F;p&gt;
+&lt;p&gt;But if you’re not going to use those larger aperture FF options, perhaps because of size, weight or cost constraints, or because it doesn&#x27;t match your style of photography, then you will not see any significant difference in output between full frame and APS-C.&lt;&#x2F;p&gt;
+&lt;p&gt;And of course you will be able to take fantastic photos with either sensor size. As usual, the person behind the camera is a far bigger limiting factor than whether the camera is APS-C or full frame.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
