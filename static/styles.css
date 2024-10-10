@@ -73,3 +73,7 @@ figcaption {
   display: block;
   font-size: 0.9em;
 }
+
+.accent {
+  color: var(--accent);
+}
