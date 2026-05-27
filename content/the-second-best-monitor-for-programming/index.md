@@ -2,6 +2,7 @@
 title = "The Second-Best Monitor for Programming"
 date = 2025-01-07
 description = "For over two years I've been using what I consider to be the second-best monitor for programming. Here's why."
+draft = true
 +++
 
 I've been writing software for about 25 years now, and messing around on computers for even longer.
