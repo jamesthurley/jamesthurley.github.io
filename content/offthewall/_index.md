@@ -5,7 +5,7 @@ sort_by = "weight"
 
 ![Off The Wall Logo](./app/icons/icon-192.png)
 
-Off The Wall is a small app for Kilter Board owners who want to have fun on with the wall between climbs.
+Off The Wall is an app for Kilter Board users who want to have fun with the wall between climbs.
 
 It can connect to supported Kilter/Aurora controllers from a compatible browser or the iOS app, and lets you draw, create animations,
 and even play games like Pong on the Kilter Board.
