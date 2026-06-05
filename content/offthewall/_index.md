@@ -3,7 +3,20 @@ title = "Off The Wall"
 sort_by = "weight"
 +++
 
-[![Off The Wall Logo](./app-store-icon.webp)](/offthewall/app/ "Launch")
+<a id="offthewall-logo-link" href="/offthewall/app/" title="Launch">
+  <img src="/offthewall/app-store-icon.webp" alt="Off The Wall Logo">
+</a>
+
+<script>
+  const offthewallIsIOS =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+  if (offthewallIsIOS) {
+    document.getElementById("offthewall-logo-link").href =
+      "https://apps.apple.com/app/off-the-wall/id6774084827";
+  }
+</script>
 
 [Launch Web App](/offthewall/app/) | [Get iOS App](https://apps.apple.com/us/app/off-the-wall/id6774084827)
 
