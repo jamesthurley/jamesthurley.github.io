@@ -3,7 +3,7 @@ title = "Off The Wall Privacy Policy"
 weight = 2
 +++
 
-Effective date: May 27, 2026
+Effective date: 5th June, 2026
 
 This policy applies to Off The Wall for iOS and the hosted web app.
 
@@ -35,11 +35,15 @@ On iOS, Off The Wall may use native Bluetooth, filesystem, and share-sheet featu
 
 The hosted web version of Off The Wall is served as static files. Standard web hosting infrastructure may process ordinary request information such as IP address, browser user agent, requested URL, and timestamp to deliver the site and maintain security.
 
-The surrounding thurley.com pages may use privacy-friendly analytics to understand aggregate site usage. The Off The Wall app does not use an account system, advertising trackers, or third-party analytics SDKs.
+Off The Wall may use privacy-focused analytics to understand aggregate app and site usage, such as page views, feature usage, and approximate geographic region. These analytics are used to improve the app and are not used for advertising or user profiling.
+
+Off The Wall does not require user accounts, does not display advertising, and does not use advertising identifiers for tracking.
 
 ## Third Parties
 
 Off The Wall relies on browser and device APIs provided by your browser, operating system, and, on iOS, the native app shell. Those platforms may handle permissions, Bluetooth pairing, sharing, and file access according to their own policies.
+
+Off The Wall may connect to third-party services when you use optional features. For example, GIF search functionality may send your search query and related network request information to the GIF provider in order to return search results.
 
 ## Changes
 
