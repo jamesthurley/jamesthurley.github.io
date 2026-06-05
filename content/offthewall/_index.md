@@ -18,7 +18,7 @@ sort_by = "weight"
   }
 </script>
 
-[Launch Web App](/offthewall/app/) | [Get iOS App](https://apps.apple.com/us/app/off-the-wall/id6774084827)
+[Launch Web App](/offthewall/app/) | [Get iOS App](https://apps.apple.com/app/off-the-wall/id6774084827)
 
 ---
 
