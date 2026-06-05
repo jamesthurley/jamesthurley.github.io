@@ -1,10 +1,10 @@
 default:
     just --list
 
-serve:
+run:
     zola serve
 
-serve-drafts:
+run-drafts:
     zola serve --drafts
 
 build:
