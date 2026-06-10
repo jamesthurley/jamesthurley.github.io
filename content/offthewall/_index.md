@@ -20,6 +20,8 @@ sort_by = "weight"
 
 [Launch Web App](/offthewall/app/) | [Get iOS App](https://apps.apple.com/app/off-the-wall/id6774084827)
 
+[Follow us on Instagram](https://www.instagram.com/offthewallapp)
+
 ---
 
 Off The Wall is an app for Kilter Board users who want to have fun with the wall between climbs. It connects to your Kilter training board over Bluetooth and lets you draw pictures, create animations, and play games using the Kilter Board as a giant screen.
