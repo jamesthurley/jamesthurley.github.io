@@ -23,13 +23,16 @@ Off The Wall stores preferences and board-selection details in your browser stor
 
 You can clear this data through your browser or device storage settings.
 
-## Bluetooth, Camera, And Files
+## Bluetooth, Camera, Microphone And Files
 
-Bluetooth access, camera access, photo or file imports, and file exports happen only after you interact with the relevant browser, iOS, or device permission prompts. Off The Wall uses those permissions to provide the feature you requested.
+Bluetooth access, camera access, microphone access, photo or file imports, and file exports happen only after you interact with the relevant browser, iOS, or device permission prompts. Off The Wall uses those permissions to provide the feature you requested.
 
 The app sends LED frame data to the board you connect to. It does not intentionally send your imported images, camera feed, or saved files to a server.
 
 On iOS, Off The Wall may use native Bluetooth, filesystem, and share-sheet features to connect to your board and save or share files you ask it to export.
+
+When Voice Commands are enabled in certain games, Off The Wall may access your device microphone to recognise spoken commands.
+Audio is used only for command recognition and is not stored by Off The Wall.
 
 ## Analytics And Hosting
 
