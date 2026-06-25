@@ -1,9 +1,18 @@
 +++
 title = "Off The Wall Privacy Policy"
 weight = 2
+
+[extra]
+content_class = "otw-site otw-document"
 +++
 
-Effective date: 5th June, 2026
+<p class="otw-document-meta">Effective 5 June 2026</p>
+
+<div class="otw-highlight">
+<p class="otw-kicker">The short version</p>
+<h3>Your creative work and board details stay on your device.</h3>
+<p>Off The Wall has no user accounts, hosted database, or app backend. Files, images, camera input, board details, and saved state are processed locally unless you explicitly export or share them.</p>
+</div>
 
 This policy applies to Off The Wall for iOS and the hosted web app.
 
@@ -31,8 +40,7 @@ The app sends LED frame data to the board you connect to. It does not intentiona
 
 On iOS, Off The Wall may use native Bluetooth, filesystem, and share-sheet features to connect to your board and save or share files you ask it to export.
 
-When Voice Commands are enabled in certain games, Off The Wall may access your device microphone to recognise spoken commands.
-Audio is used only for command recognition and is not stored by Off The Wall.
+When Voice Commands are enabled in certain games, Off The Wall may access your device microphone to recognise spoken commands. Audio is used only for command recognition and is not stored by Off The Wall.
 
 ## Analytics And Hosting
 
@@ -55,3 +63,8 @@ This policy may be updated as Off The Wall changes. The effective date above wil
 ## Contact
 
 For privacy questions, use the contact instructions on the [support page](/offthewall/support/).
+
+<nav class="otw-related" aria-label="Off The Wall information">
+  <a href="/offthewall/"><strong>Off The Wall</strong><span>Back to the app overview</span></a>
+  <a href="/offthewall/support/"><strong>Support</strong><span>Get help or contact the developer</span></a>
+</nav>

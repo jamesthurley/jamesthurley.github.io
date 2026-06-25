@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+<section class="{{ section.extra.content_class | default(value='') }}">
 <h1 class="title">
   {{ section.title }}
 </h1>
 {{ section.content | safe }}
+</section>
 {% endblock content %}

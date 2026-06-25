@@ -93,3 +93,162 @@ figcaption {
   text-align: right;
   opacity: 0.8;
 }
+
+/* Off The Wall microsite */
+.otw-site {
+  --otw-bg: #0a0b0f;
+  --otw-panel: #111217;
+  --otw-raised: #19191f;
+  --otw-border: #34343f;
+  --otw-text: #f5f2f1;
+  --otw-muted: #aaa6af;
+  --otw-teal: #5ce0d6;
+  --otw-green: #9ee96c;
+  --otw-warm: #ffc36a;
+  --otw-pink: #ef477d;
+  color: var(--otw-text);
+  border: 1px solid var(--otw-border);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(92, 224, 214, 0.12), transparent 24rem),
+    radial-gradient(circle at 94% 3%, rgba(239, 71, 125, 0.1), transparent 22rem),
+    var(--otw-bg);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+  padding: clamp(1.2rem, 4vw, 2.6rem);
+}
+
+section.otw-site:first-child,
+section.otw-site:last-child {
+  padding-block: clamp(1.2rem, 4vw, 2.6rem);
+}
+
+.otw-site > .title {
+  margin: 0 0 2rem;
+  color: var(--otw-text);
+  font-size: clamp(2rem, 6vw, 3.7rem);
+  letter-spacing: -0.045em;
+}
+
+.otw-site h2,
+.otw-site h3 { color: var(--otw-text); }
+.otw-site h2 { font-size: clamp(1.7rem, 4vw, 2.7rem); letter-spacing: -0.035em; }
+.otw-site h3 { margin: 0; font-size: 1.08rem; }
+.otw-site p,
+.otw-site li { color: var(--otw-muted); font-weight: 650; line-height: 1.6; }
+.otw-site a,
+.otw-site a:visited { color: var(--otw-teal); }
+
+.otw-hero {
+  display: grid;
+  grid-template-columns: minmax(150px, 230px) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.otw-logo-link img {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(92, 224, 214, 0.22);
+  border-radius: 24%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.42);
+  opacity: 1;
+}
+
+.otw-hero-copy h2,
+.otw-commercial-hero h2,
+.otw-commercial-pricing h2 { margin: 0.25rem 0 0.75rem; }
+
+.otw-kicker,
+.otw-card-kicker {
+  margin: 0;
+  color: var(--otw-teal) !important;
+  font-size: 0.76rem;
+  font-weight: 900 !important;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.otw-card-kicker.otw-green { color: var(--otw-green) !important; }
+.otw-card-kicker.otw-warm { color: var(--otw-warm) !important; }
+.otw-card-kicker.otw-pink { color: var(--otw-pink) !important; }
+.otw-lede { color: var(--otw-text) !important; font-size: 1.12rem; }
+
+.otw-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.25rem 0 0; }
+.otw-button,
+.otw-button:visited {
+  border: 1px solid var(--otw-border);
+  border-radius: 8px;
+  background: var(--otw-raised);
+  color: var(--otw-text) !important;
+  font-weight: 800;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+}
+.otw-button:hover { border-color: var(--otw-teal); }
+.otw-button-primary,
+.otw-button-primary:visited { border-color: var(--otw-teal); background: linear-gradient(135deg, #1e7f7b, #155d61); }
+
+.otw-intro { max-width: 760px; border-top: 1px solid var(--otw-border); margin: 2rem 0; padding-top: 1.5rem; font-size: 1.05rem; }
+.otw-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; margin: 1.5rem 0; }
+.otw-mode-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.otw-card { min-width: 0; border: 1px solid var(--otw-border); border-radius: 9px; background: rgba(25, 25, 31, 0.94); padding: 1.1rem; }
+.otw-card h3 { margin: 0.35rem 0 0.6rem; }
+.otw-card p { margin: 0.7rem 0 0; }
+
+.otw-highlight {
+  border: 1px solid rgba(92, 224, 214, 0.32);
+  border-left: 4px solid var(--otw-teal);
+  border-radius: 9px;
+  background: linear-gradient(135deg, rgba(92, 224, 214, 0.14), rgba(17, 18, 23, 0.92) 58%);
+  margin: 1.7rem 0;
+  padding: 1.2rem;
+}
+.otw-highlight h3 { margin: 0.35rem 0 0; }
+.otw-highlight p:last-child { margin-bottom: 0; }
+
+.otw-two-column,
+.otw-steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; border-top: 1px solid var(--otw-border); margin-top: 2rem; padding-top: 1rem; }
+.otw-two-column h2 { font-size: 1.55rem; }
+
+.otw-related { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; border-top: 1px solid var(--otw-border); margin-top: 2rem; padding-top: 1.5rem; }
+.otw-related a { display: grid; gap: 0.25rem; border: 1px solid var(--otw-border); border-radius: 8px; background: var(--otw-panel); padding: 1rem; text-decoration: none; }
+.otw-related a:hover { border-color: var(--otw-teal); }
+.otw-related strong { color: var(--otw-text); }
+.otw-related span { color: var(--otw-muted); font-size: 0.87rem; }
+
+.otw-document { max-width: 880px; margin-inline: auto; }
+.otw-document > h2 { border-top: 1px solid var(--otw-border); padding-top: 1.4rem; }
+.otw-document-meta { margin-top: -1.4rem; color: var(--otw-teal) !important; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.otw-contact-address { color: var(--otw-text) !important; font-size: 1.35rem; }
+.otw-contact-address span { color: var(--otw-pink); }
+
+.otw-commercial-hero { max-width: 780px; }
+.otw-commercial-pricing { max-width: 780px; border-top: 1px solid var(--otw-border); margin-top: 2rem; padding-top: 1.5rem; }
+.otw-steps { grid-template-columns: minmax(180px, 0.65fr) minmax(0, 1.35fr); }
+.otw-steps ol { display: grid; gap: 0.7rem; margin: 0; padding: 0; counter-reset: otw-step; list-style: none; }
+.otw-steps li { position: relative; border: 1px solid var(--otw-border); border-radius: 8px; background: var(--otw-panel); padding: 0.8rem 0.9rem 0.8rem 3.4rem; }
+.otw-steps li::before { position: absolute; top: 0.75rem; left: 0.85rem; display: grid; width: 1.7rem; height: 1.7rem; place-items: center; border-radius: 7px; background: var(--otw-pink); color: white; content: counter(otw-step); counter-increment: otw-step; font-weight: 900; }
+.otw-steps strong { color: var(--otw-text); }
+
+@media only screen and (max-width: 720px) {
+  .otw-site { border-radius: 8px; padding: 1rem; }
+  section.otw-site:first-child,
+  section.otw-site:last-child { padding-block: 1rem; }
+  .otw-hero { grid-template-columns: 100px minmax(0, 1fr); align-items: start; }
+  .otw-card-grid,
+  .otw-mode-grid,
+  .otw-two-column,
+  .otw-steps,
+  .otw-related { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media only screen and (max-width: 460px) {
+  .otw-hero { grid-template-columns: minmax(0, 1fr); }
+  .otw-logo-link { width: 112px; }
+}
+
+@media (prefers-color-scheme: light) {
+  .otw-site { color-scheme: dark; }
+  .otw-site img { opacity: 1; }
+}
