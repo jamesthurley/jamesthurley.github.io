@@ -1,0 +1,24 @@
+{
+  "name": "Off The Wall",
+  "short_name": "Off The Wall",
+  "description": "Draw, animate, and play on your Kilter Board between climbs.",
+  "start_url": "/offthewall/app/",
+  "scope": "/offthewall/app/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    {
+      "src": "/offthewall/app/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/offthewall/app/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

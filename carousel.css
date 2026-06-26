@@ -1,0 +1,48 @@
+
+.carousel {
+  position: relative;
+}
+
+.carousel:focus {
+  outline: none;
+}
+
+.carousel>.list {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+
+  list-style: none;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel>.list>.item {
+  flex-shrink: 0;
+  width: 100%;
+  scroll-snap-align: center;
+}
+
+.carousel>.list>.item>.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.carousel>button {
+  position: absolute;
+  top: 1.5rem;
+
+  width: 3rem;
+  height: 3rem;
+}
+
+.carousel>.button--previous {
+  left: 1.5rem;
+  transform: rotate(180deg);
+}
+
+.carousel>.button--next {
+  right: 1.5rem;
+}

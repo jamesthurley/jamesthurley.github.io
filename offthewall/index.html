@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>thurley.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/simple.css">
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  <link rel="manifest" href="&#x2F;offthewall&#x2F;site.webmanifest">
+
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="06cf5b64-fc8b-488b-b9db-9f54b74e3753"></script>
+  
+  <link rel="alternate" type="application/atom+xml" title="thurley.com" href="https://thurley.com/atom.xml">
+  
+</head>
+
+<body>
+  <header>
+    <a href="/"><h1>thurley<span class="accent">.</span>com</h1></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/offthewall">Off The Wall</a>
+    </nav>
+  </header>
+  <main>
+    
+<section class="otw-site otw-home">
+<h1 class="title">
+  Off The Wall
+</h1>
+<div class="otw-hero">
+  <a id="offthewall-logo-link" class="otw-logo-link" href="/offthewall/app/" title="Launch Off The Wall">
+    <img src="/offthewall/app-store-icon.webp" alt="Off The Wall Logo">
+  </a>
+  <div class="otw-hero-copy">
+    <p class="otw-kicker">Creative time between climbs</p>
+    <h2>Turn your Kilter Board into a giant canvas</h2>
+    <p class="otw-lede">Draw, animate, and play on the wall you already climb on.</p>
+    <div class="otw-actions">
+      <a id="offthewall-web-app-link" class="otw-button otw-button-primary" href="/offthewall/app/">Launch Web App</a>
+      <a id="offthewall-ios-app-link" class="otw-button" href="https://apps.apple.com/app/off-the-wall/id6774084827">Get iOS App</a>
+      <a class="otw-button" href="https://www.instagram.com/offthewallapp">Instagram</a>
+    </div>
+  </div>
+</div>
+<script>
+  const offthewallIsIOS =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+  if (offthewallIsIOS) {
+    document.getElementById("offthewall-logo-link").href =
+      "https://apps.apple.com/app/off-the-wall/id6774084827";
+    document
+      .getElementById("offthewall-ios-app-link")
+      .classList.add("otw-button-primary");
+    document
+      .getElementById("offthewall-web-app-link")
+      .classList.remove("otw-button-primary");
+  }
+</script>
+<div class="otw-intro">
+  <p>Off The Wall is an app for climbers who want to have fun with the Kilter Board between climbs. It connects over Bluetooth and turns the board into a giant low-resolution screen.</p>
+</div>
+<div class="otw-card-grid otw-feature-grid">
+  <article class="otw-card"><p class="otw-card-kicker otw-green">Draw</p><h3>Paint directly on the wall</h3><p>Draw pictures in real time. Import photos. Save and load your creations locally.</p></article>
+  <article class="otw-card"><p class="otw-card-kicker otw-teal">Animate</p><h3>Bring pictures to life</h3><p>Sequence multiple frames into animations and play them on the board.</p></article>
+  <article class="otw-card"><p class="otw-card-kicker otw-warm">Reactions</p><h3>Send GIFs to the board</h3><p>Search GIFS and create a custom reaction panel for glorious sends, spectacular face plants, and everything between.</p></article>
+  <article class="otw-card"><p class="otw-card-kicker otw-pink">Play</p><h3>Play games on the board</h3><p>Play Pong, Conway's Game of Life, Hold Rush, and other games live on the Kilter Board.</p></article>
+  <article class="otw-card"><p class="otw-card-kicker otw-teal">Ambiance</p><h3>Mood lighting</h3><p>Run colorful screensavers and generative effects when you want the wall to set the mood.</p></article>
+  <article class="otw-card"><p class="otw-card-kicker otw-green">Commercial gyms</p><h3>Put idle walls to work</h3><p>Run playlists when the wall is idle. Automatically turn off holds to prolong LED life.</p><p><a href="/offthewall/commercial-gyms/">Explore gym features →</a></p></article>
+</div>
+<div class="otw-highlight">
+<p class="otw-kicker">Free and private</p>
+<h3>No account required. No ads.</h3>
+<p>Off The Wall does not require an account, does not include ads, and does not collect personally identifiable information. Anonymous usage analytics may be collected to help improve the app.</p>
+</div>
+<div class="otw-two-column">
+<div>
+<h2 id="supported-boards">Supported boards</h2>
+<ul>
+<li>Kilter Board Homewall</li>
+<li>Kilter Board Original</li>
+<li>Tension Board 2 (not verified)</li>
+</ul>
+<p>More boards may follow in the future. Let me know if there are any you want added.</p>
+<p>Requires Bluetooth Low Energy and a compatible Aurora/Kilter controller for board control. The app can still be opened and used without a board.</p>
+</div>
+<div>
+<h2 id="good-to-know">Good to know</h2>
+<p>This app has not been tested on all board configurations and hardware. Use at your own risk.</p>
+<p>Boards with older hardware may not refresh as fast as newer hardware, making games unplayable and animations slow.</p>
+<p>The Safari browser does not support Web Bluetooth, so you will have to use the iOS App if you are on an iOS device, or Chrome on MacOS.</p>
+</div>
+</div>
+<nav class="otw-related" aria-label="Off The Wall information">
+  <a href="/offthewall/commercial-gyms/"><strong>Commercial Gyms</strong><span>Idle and event displays for your wall</span></a>
+  <a href="/offthewall/support/"><strong>Support</strong><span>Get help with the app</span></a>
+  <a href="/offthewall/privacy/"><strong>Privacy</strong><span>How local data and permissions are handled</span></a>
+</nav>
+
+</section>
+
+  </main>
+  <footer>
+    <a href="/">Home</a>
+    <a href="https://github.com/jamesthurley">GitHub</a>
+    <a href="/atom.xml">RSS Feed</a>
+  </footer>
+</body>
+
+</html>
