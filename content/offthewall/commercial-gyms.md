@@ -4,6 +4,7 @@ weight = 3
 
 [extra]
 content_class = "otw-site otw-commercial"
+manifest_path = "/offthewall/site.webmanifest"
 +++
 
 <div class="otw-commercial-hero">

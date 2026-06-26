@@ -4,6 +4,7 @@ weight = 2
 
 [extra]
 content_class = "otw-site otw-document"
+manifest_path = "/offthewall/site.webmanifest"
 +++
 
 <p class="otw-document-meta">Effective 5 June 2026</p>

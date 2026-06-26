@@ -4,6 +4,7 @@ sort_by = "weight"
 
 [extra]
 content_class = "otw-site otw-home"
+manifest_path = "/offthewall/site.webmanifest"
 +++
 
 <div class="otw-hero">
@@ -15,8 +16,8 @@ content_class = "otw-site otw-home"
     <h2>Turn your Kilter Board into a giant canvas</h2>
     <p class="otw-lede">Draw, animate, and play on the wall you already climb on.</p>
     <div class="otw-actions">
-      <a class="otw-button otw-button-primary" href="/offthewall/app/">Launch Web App</a>
-      <a class="otw-button" href="https://apps.apple.com/app/off-the-wall/id6774084827">Get iOS App</a>
+      <a id="offthewall-web-app-link" class="otw-button otw-button-primary" href="/offthewall/app/">Launch Web App</a>
+      <a id="offthewall-ios-app-link" class="otw-button" href="https://apps.apple.com/app/off-the-wall/id6774084827">Get iOS App</a>
       <a class="otw-button" href="https://www.instagram.com/offthewallapp">Instagram</a>
     </div>
   </div>
@@ -30,6 +31,12 @@ content_class = "otw-site otw-home"
   if (offthewallIsIOS) {
     document.getElementById("offthewall-logo-link").href =
       "https://apps.apple.com/app/off-the-wall/id6774084827";
+    document
+      .getElementById("offthewall-ios-app-link")
+      .classList.add("otw-button-primary");
+    document
+      .getElementById("offthewall-web-app-link")
+      .classList.remove("otw-button-primary");
   }
 </script>
 

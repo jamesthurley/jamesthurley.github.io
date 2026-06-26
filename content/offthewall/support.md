@@ -4,6 +4,7 @@ weight = 1
 
 [extra]
 content_class = "otw-site otw-document otw-support"
+manifest_path = "/offthewall/site.webmanifest"
 +++
 
 <p class="otw-lede">Help with Off The Wall on iOS and the web.</p>

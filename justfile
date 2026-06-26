@@ -2,7 +2,7 @@ default:
     just --list
 
 run:
-    zola serve
+    zola serve --interface 0.0.0.0
 
 run-drafts:
     zola serve --drafts

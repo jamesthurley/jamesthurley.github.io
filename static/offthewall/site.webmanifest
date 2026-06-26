@@ -1,7 +1,7 @@
 {
   "name": "Off The Wall",
   "short_name": "Off The Wall",
-  "description": "A focused Kilter Board inspection and creative-control workbench.",
+  "description": "Draw, animate, and play on your Kilter Board between climbs.",
   "start_url": "/offthewall/app/",
   "scope": "/offthewall/app/",
   "display": "standalone",

@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% block extra_head %}
+{% if section.extra.manifest_path %}
+  <link rel="manifest" href="{{ section.extra.manifest_path }}">
+{% endif %}
+{% endblock extra_head %}
+
 {% block content %}
 <section class="{{ section.extra.content_class | default(value='') }}">
 <h1 class="title">
