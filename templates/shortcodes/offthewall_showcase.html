@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/offthewall/media/showcase.css" />
+{% if overview | default(value=false) %}
+<figure
+  class="otw-showcase otw-overview-showcase"
+  aria-label="Off The Wall demo"
+>
+  {% include "partials/offthewall-video.html" %}
+</figure>
+{% else %}
+<div class="otw-showcase" role="region" aria-label="See it in action">
+  <div class="otw-showcase-heading">
+    <h3 class="otw-showcase-kicker">See it in action</h3>
+  </div>
+  <div class="otw-showcase-grid">
+    <figure class="otw-showcase-wall">
+      {% include "partials/offthewall-video.html" %}
+    </figure>
+    <figure class="otw-showcase-screen">
+      <img
+        class="otw-showcase-image"
+        src="/offthewall/media/idle-mode-screenshot.webp"
+        alt="Idle Mode showing a Waiting state, board status indicators, and a colour-coded activity timeline"
+        width="1284"
+        height="1266"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+  </div>
+</div>
+{% endif %}
+<script type="module">
+  import { mountShowcaseMedia } from "/offthewall/media/showcase.js";
+  document.querySelectorAll(".otw-showcase").forEach(mountShowcaseMedia);
+</script>

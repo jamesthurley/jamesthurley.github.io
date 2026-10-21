@@ -44,19 +44,25 @@ manifest_path = "/offthewall/site.webmanifest"
   <p>Off The Wall is an app for climbers who want to have fun with the Kilter Board between climbs. It connects over Bluetooth and turns the board into a giant low-resolution screen.</p>
 </div>
 
+<div class="otw-feature-showcase">
+
+{{ offthewall_showcase(overview=true) }}
+
 <div class="otw-card-grid otw-feature-grid">
 
   <article class="otw-card"><p class="otw-card-kicker otw-green">Draw</p><h3>Paint directly on the wall</h3><p>Draw pictures in real time. Import photos. Save and load your creations locally.</p></article>
 
   <article class="otw-card"><p class="otw-card-kicker otw-teal">Animate</p><h3>Bring pictures to life</h3><p>Sequence multiple frames into animations and play them on the board.</p></article>
 
-  <article class="otw-card"><p class="otw-card-kicker otw-warm">Reactions</p><h3>Send GIFs to the board</h3><p>Search GIFS and create a custom reaction panel for glorious sends, spectacular face plants, and everything between.</p></article>
+  <article class="otw-card"><p class="otw-card-kicker otw-teal">Ambiance</p><h3>Mood lighting</h3><p>Run colorful screensavers and generative effects when you want the wall to set the mood.</p></article>
 
   <article class="otw-card"><p class="otw-card-kicker otw-pink">Play</p><h3>Play games on the board</h3><p>Play Pong, Conway's Game of Life, Hold Rush, and other games live on the Kilter Board.</p></article>
 
-  <article class="otw-card"><p class="otw-card-kicker otw-teal">Ambiance</p><h3>Mood lighting</h3><p>Run colorful screensavers and generative effects when you want the wall to set the mood.</p></article>
+  <article class="otw-card"><p class="otw-card-kicker otw-warm">Reactions</p><h3>Send GIFs to the board</h3><p>Search GIFS and create a custom reaction panel for glorious sends, spectacular face plants, and everything between.</p></article>
 
   <article class="otw-card"><p class="otw-card-kicker otw-green">Commercial gyms</p><h3>Put idle walls to work</h3><p>Run playlists when the wall is idle. Automatically turn off holds to prolong LED life.</p><p><a href="/offthewall/commercial-gyms/">Explore gym features →</a></p></article>
+</div>
+
 </div>
 
 <div class="otw-highlight">
@@ -77,6 +83,7 @@ manifest_path = "/offthewall/site.webmanifest"
 More boards may follow in the future. Let me know if there are any you want added.
 
 Requires Bluetooth Low Energy and a compatible Aurora/Kilter controller for board control. The app can still be opened and used without a board.
+
 </div>
 <div>
 
@@ -87,6 +94,7 @@ This app has not been tested on all board configurations and hardware. Use at yo
 Boards with older hardware may not refresh as fast as newer hardware, making games unplayable and animations slow.
 
 The Safari browser does not support Web Bluetooth, so you will have to use the iOS App if you are on an iOS device, or Chrome on MacOS.
+
 </div>
 </div>
 
